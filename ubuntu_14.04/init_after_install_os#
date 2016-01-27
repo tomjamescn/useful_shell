@@ -11,3 +11,13 @@ ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 wget https://raw.github.com/viljoviitanen/setup-simple-pptp-vpn/master/setup.sh
 #pptp username and password is in file below
 sh setup.sh > /root/pptp_vpn_server_install_log
+
+#install nginx
+apt-get install -y nginx
+
+#install squid and config
+apt-get install -y squid
+apt-get install -y apache2-utils
+touch /etc/squid3/squid_passwd
+chmod -R 777 /etc/squid3/squid_passwd
+#剩下的由于需要手动执行，请参考笔记中的记载，今后也可以通过expect来自动化
