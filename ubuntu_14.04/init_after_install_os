@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#set locale
+locale-gen zh_CN.UTF-8
+
+#set timezone
+rm /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+  
+#pptp vpn server init
+wget https://raw.github.com/viljoviitanen/setup-simple-pptp-vpn/master/setup.sh
+#pptp username and password is in file below
+sh setup.sh > /root/pptp_vpn_server_install_log
