@@ -54,6 +54,9 @@ cat <<EOM >/etc/httpd/sites-enabled/$1.dev.com.conf
 </VirtualHost>
 EOM
 
+eccho "systemctl restart httpd.service..."
+
+systemctl restart httpd.service
 
 echo "OK"
 echo ""
